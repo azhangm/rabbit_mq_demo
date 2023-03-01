@@ -5,6 +5,7 @@ import lombok.extern.slf4j.Slf4j;
 import nuc.zm.rabbit_demo.service.OrderDetailService;
 import nuc.zm.rabbit_demo.vo.OrderCreateVo;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -27,7 +28,7 @@ public class OrderDetailController {
     private OrderDetailService service;
 
     @PostMapping("/add-order")
-    public void createOrder(OrderCreateVo vo) throws IOException, TimeoutException {
+    public void createOrder(@RequestBody OrderCreateVo vo) throws IOException, TimeoutException {
         log.info("createOrder:OrderCreateVo:{}"  , vo.toString());
         service.createOrder(vo);
     }
