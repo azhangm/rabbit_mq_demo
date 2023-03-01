@@ -1,8 +1,11 @@
 package nuc.zm.rabbit_demo.dto;
 
+import com.sun.org.apache.xpath.internal.operations.Bool;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
+
+import java.math.BigDecimal;
 
 /**
  * 订单消息dto
@@ -21,4 +24,7 @@ public class OrderMessageDTO {
 
     private Integer accountId;
 
+    private Boolean Confirmed;
+
+    private BigDecimal price;
 }

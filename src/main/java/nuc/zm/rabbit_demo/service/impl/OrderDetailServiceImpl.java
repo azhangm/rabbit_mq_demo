@@ -31,7 +31,7 @@ public class OrderDetailServiceImpl implements OrderDetailService {
 
 
     @Resource
-    OrderDetailMapper mapper;
+    private OrderDetailMapper mapper;
 
     @Resource
     ObjectMapper jsonutil = new ObjectMapper();
