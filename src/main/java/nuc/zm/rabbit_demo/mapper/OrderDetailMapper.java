@@ -1,6 +1,6 @@
 package nuc.zm.rabbit_demo.mapper;
 
-import nuc.zm.rabbit_demo.po.OderDetailPo;
+import nuc.zm.rabbit_demo.po.OrderDetailPo;
 import org.apache.ibatis.annotations.*;
 
 /**
@@ -21,7 +21,7 @@ public interface OrderDetailMapper {
             " (status, address, account_id, product_id, deliveryman_id, settlement_id, reward_id, price, date) " +
             "VALUES (#{status},#{address},${accountId},#{productId},#{deliverymanId},#{settlementId},#{rewardId},#{price},#{date}) ")
     @Options(useGeneratedKeys = true,keyProperty = "id")
-    void insertOrderDetail(OderDetailPo order);
+    void insertOrderDetail(OrderDetailPo order);
 
 
     /**
@@ -36,15 +36,15 @@ public interface OrderDetailMapper {
             "settlement_id = #{settlementId} , reward_id = #{rewardId}, " +
             "price = #{price}, date = #{date}" +
             " where id = #{id}")
-    void updateOrderDetail(OderDetailPo oderDetailPo);
+    void updateOrderDetail(OrderDetailPo oderDetailPo);
 
 
     /**
      * 选择奥得河细节通过id
      *
      * @param id id
-     * @return {@link OderDetailPo}
+     * @return {@link OrderDetailPo}
      */
     @Select("SELECT * FROM order_detail where  id = #{id}")
-    OderDetailPo selectOderDetailById(Integer id);
+    OrderDetailPo selectOderDetailById(Integer id);
 }

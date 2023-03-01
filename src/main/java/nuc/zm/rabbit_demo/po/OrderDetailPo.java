@@ -17,7 +17,7 @@ import java.util.Date;
 @Getter
 @Setter
 @ToString
-public class OderDetailPo {
+public class OrderDetailPo {
 
     private Integer id;
     private OrderStatus status;
